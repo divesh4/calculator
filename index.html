@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pangolin&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+    <!-- css part -->
+    <style>
+        body{
+            background-color: rgb(247, 247, 247);
+            display: flex;  /*for moving the calculator to center horizontaly*/
+            justify-content: center;    /*this moves it to the center*/
+            flex-direction: column;
+            align-items: center;
+        }
+   
+        button{
+            color:rgb(59, 59, 59);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin: 7px;
+            font-size: large;
+            border: none;
+            text-shadow: 2px 2px 10px rgba(255,255,255,0.5);
+            /* box-sizing: border-box; */
+            /* outline: none; */
+            box-shadow: 0px 0px 2px 0px rgb(122, 122, 122),5px 5px 0px 0px rgb(212, 212, 212);
+            /* border: 2px solid rgb(51, 51, 51); */
+            /* box-shadow: -6px -6px 35px #ffffff, -6px -10px 15px #ffffff , -20px 0px 30px #ffffff, 6px 20px 25px rgba(0, 0, 0, .2); */
+            /* transition: .13s ease-in-out; */
+            
+        }
+   
+        button:hover{
+        cursor:pointer;    
+        background-color: rgb(240, 240, 240);
+            color: rgb(59, 59, 59);
+            border: none;
+
+ 
+
+        }
+        button:active{
+            border: none;
+           
+           box-shadow: none;
+           border-radius: 10px;
+           left: 5px ;
+           top: 5px ;
+           position: relative;
+           border: 2px solid rgb(155, 155, 155);
+           
+           box-shadow:none;
+       
+       }
+ 
+        .span1{
+            width: 60px;
+            height: 60px;
+        }
+        .span2{
+                width: 134px; /*for equal to symbol*/
+                height: 60px;
+                background-color: rgb(0, 168, 180);
+                color: white;
+        }
+        .circle-button{
+            width: 30px;
+            height: 30px;
+            font-size: small;
+            border-radius: 50%;
+            margin:3px;
+        }
+        #calculator-body, #claculator-body1{ 
+            /* border: 4px solid rgb(255, 255, 255); */
+            background-color:rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 20px 20px 25px rgb(221, 221, 221);
+            display: block;
+            padding: 30px;
+            height: 100%;
+            width: 296px;
+            margin: 5px;
+            /* margin-top:/ 50px; */
+        }
+        
+        div{
+            display:flex; 
+            justify-content: space-around;
+            /* for moving equal to closer 
+            because due to margin it looked away*/
+            
+        }
+        #display-box, #display-box1{
+            width: 94%;
+            height: 20px;
+            margin: 2px;
+            display: flex;
+            align-self: auto;
+            font-size: smaller;
+            justify-content: right;
+            align-items:flex-end;
+            padding: 4px;
+            background-color: rgb(255, 255, 255);
+         } 
+         #display-box{
+             color: rgb(0, 148, 0);
+         }
+        
+        
+        .circle-button:hover{
+            background-color:rgb(231, 231, 231);
+            color: rgb(56, 56, 56);
+        }
+
+        #inputbox{
+            width: 94%;
+            height: 45px;
+            margin-bottom: 15px;
+            text-align: right;
+            /* background-color: rgb(255, 217, 205); */
+            /* font-family: 'Gill Sa/ns', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+            font-size: 25px;
+            /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; */
+            border: none;
+            padding: 4px;
+            font-weight: bold;
+            box-shadow:inset 4px 4px 9px 0px rgb(189, 189, 189);
+            /* font-family: 'Montserrat', sans-serif; */
+            border-radius: 30px;
+            /* box-shadow: inset 3px 3px 10px rgb(160, 6, 6); */
+            background-color: rgb(255, 255, 255);
+            /* border: 2px solid rgb(179, 179, 179); */
+            color: rgb(94, 94, 94);
+            /* transition: all 1s ease-in-out; */
+        }
+        #claculator-body1,       #claculator-body2{
+            position: absolute;
+            top: -720px;
+            /* z-index: -1; */
+            height: 543px;
+            box-shadow: none;
+            width: 300px;
+            font-size: larger;
+            background-color: rgba(255,255,255,.75);
+            transition: all 1.5s;
+        }
+    
+        p{
+            line-height: 50px;
+            transition: all 2s;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h4:hover{
+            color: rgb(0, 140, 255);
+            cursor: pointer;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            background-color: rgb(0, 182, 9);
+            width: 100px;
+            padding: 15px;
+            color: white;
+            margin: 10px;
+            height: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            box-shadow: 5px 5px 0px 0px rgb(0, 90, 20);
+         
+        }
+        a:active{
+            position: relative;           
+           left: 5px ;
+           top: 5px ;
+           box-shadow: none;
+           border: none;
+
+      
+        }
+    </style>
+</head>
+<body>
+    <div id="claculator-body1" >
+        <h4 class="links" onclick="closenav()">&olcross;;</h4>
+        <h4 class="links" onclick = slide2()>Area</h4>
+        <h4 class="links">Volume</h4>
+        <h4 class="links">Gravity</h4>
+        <h4 class="links"></h4>
+        <h4 class="links"></h4>
+        <h4 class="links"></h4>
+        <h4 class="links"></h4>
+        <h4 class="links"></h4>
+        <h4 class="links"></h4>
+    </div>
+
+    <div id="calculator-body">
+        <div id="display-box">
+            Ans
+        </div>
+        <div id="display-box1">
+            0
+        </div>
+        <input type="text" id="inputbox" placeholder="0">
+
+    <div >
+
+        <button class="span1" onclick="clr()" value="C">C</button>
+        <button class="span1"onclick="del()" value="">DEL</button>
+        <button id="modulus" class="span1"onclick="calc('%')">%</button>
+        <button id="mult" class="span1" class = "operator" onclick="calc('*')">&times</button>
+    </div>
+    <div >
+
+        <button class="span1" value="1" onclick="calc(1)">1</button>
+        <button class="span1" value="2" onclick="calc(2)">2</button>
+        <button class="span1" value="3" onclick="calc(3)">3</button>
+        <button id="divide" class="span1" class = "operator" onclick="calc('/')">&divide</button>
+    </div>
+    <div>
+        
+        <button class="span1" value="4" onclick="calc(4)">4</button>
+        <button class="span1" value="5" onclick="calc(5)" >5</button>
+        <button class="span1" value="6" onclick="calc(6)">6</button>
+        <button id="subtraction" class="span1" class = "operator" onclick="calc('-')">-</button>
+    </div>
+    <div>
+
+        <button class="span1" value="7" onclick="calc(7)">7</button>
+        <button class="span1" value= "8" onclick="calc(8)">8</button>
+        <button class="span1" value="9" onclick="calc(9)">9</button>
+        <button id="addition" class="span1" class = "operator" onclick="calc('+')">+</button>
+    </div>
+    <div>
+
+        <button class="span1" value="." onclick="calc('.')">.</button>
+        <button class="span1" value="0" onclick="calc(0)">0</button>
+        <button class="span2" value="=" onclick="Result()">=</button>
+    </div>
+</div>
+<a href="advance-calculator.html">Scientific Calculator</a>
+<script>
+   let result = document.getElementById("inputbox");
+   let calc=(number)=>{
+       result.value+=number;
+       document.getElementById("display-box1").innerHTML= result.value;
+
+    }
+    let Result=()=>{
+        try{
+            result.value=eval(result.value);
+            document.getElementById("display-box").innerHTML= "Ans : "+ result.value;
+        }
+        catch(err){
+            alert("Enter the valid input");
+        }
+        
+    }
+    function clr(){
+        result.value= " ";
+        document.getElementById("display-box").innerHTML= "Ans";
+        document.getElementById("display-box1").innerHTML= 0;
+
+  
+   }
+   function del(){
+       result.value=result.value.slice(0,-1);
+       document.getElementById("display-box").innerHTML= result.value;
+       document.getElementById("display-box1").innerHTML= result.value;
+
+  
+   }
+  function slide()
+  {
+      document.getElementById("claculator-body1").style.top = "2px";
+    //   document.getElementById("claculator-body1").style.zIndex = "1";
+
+
+  }
+  function closenav(){
+    document.getElementById("claculator-body1").style.top = "-720px";
+
+  }
+  function slide2()
+  {
+      document.getElementById("claculator-body2").style.top = "2px";
+    //   document.getElementById("claculator-body1").style.zIndex = "1";
+
+
+  }
+</script>
+</body>
+</html>
